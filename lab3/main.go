@@ -179,7 +179,7 @@ func getWeather(lat, lng float64, apiKey string) (*WeatherResult, error) {
 	params.Add("lat", fmt.Sprintf("%f", lat))
 	params.Add("lon", fmt.Sprintf("%f", lng))
 	params.Add("appid", apiKey)
-	params.Add("units", "metric") // Для удобства: температура в градусах Цельсия
+	params.Add("units", "metric")
 
 	resp, err := http.Get(fmt.Sprintf("%s?%s", baseURL, params.Encode()))
 	if err != nil {
